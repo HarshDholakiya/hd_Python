@@ -1,0 +1,62 @@
+#task1
+class category:
+    def __init__(self,name,code):
+        self.name = name
+        self.code = code
+        self.no_of_products = 0
+
+#task2
+class product:
+    def __init__(self,name,code,category,price):
+        self.name = name
+        self.code = code
+        self.category = category
+        self.price = price
+        category.no_of_products += 1
+#task3
+
+    def sortprice():
+        for i in range(0, len(products)):
+            for j in range(i + 1, len(products)):
+                if products[i].price > products[j].price:
+                    temp = products[i]
+                    products[i] = products[j]
+                    products[j] = temp
+        print("\n")
+        for product in products:
+            print(f"product: {product.name}, Code: {product.code}, Number of Products: {product.price}")
+
+    def search():
+
+        hd = int(input("enter code:"))
+        for product in products:
+            if product.code == hd:
+                print(f"product: {product.name}, Code: {product.code}, Number of Products: {product.price}")
+
+
+p1 = category("food","h1")
+p2 = category("shoes","h2")
+p3 = category("mobile","h3")
+categories = [p1,p2,p3]
+
+#task4
+
+products = [
+        product("Bhel", 1, p1, 1500),
+        product("pav-bhaji", 2, p1, 1800), product("samsung", 3, p3, 9000),
+        product("vivo", 4, p3, 6000),
+        product("nike", 5, p2, 7500), product("puma", 6, p2, 10500), product("oppo", 7, p3, 5000),
+        product("dosa", 8, p1, 9900), product("bata", 9, p2, 15090), product("fila", 10, p2, 800)
+    ]
+
+
+for category in categories:
+    print(f"Category: {category.name}, Code: {category.code}, Number of Products: {category.no_of_products}")
+product.sortprice()
+
+
+product.search()
+
+
+
+
