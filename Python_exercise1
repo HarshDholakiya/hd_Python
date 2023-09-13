@@ -15,7 +15,7 @@ class product:
         category.no_of_products += 1
 #task3
 
-    def sortprice():
+    def low_sortprice():
         for i in range(0, len(products)):
             for j in range(i + 1, len(products)):
                 if products[i].price > products[j].price:
@@ -26,6 +26,16 @@ class product:
         for product in products:
             print(f"product: {product.name}, Code: {product.code}, Number of Products: {product.price}")
 
+    def High_sortprice():
+        for i in range(0,len(products)):
+            for j in range(i+1,len(products)):
+                if products[i].price < products[j].price:
+                    temp = products[i]
+                    products[i] = products[j]
+                    products[j] = temp
+        print("\n")
+        for product in products:
+            print(f"product: {product.name}, Code: {product.code}, Number of Products: {product.price}")
     def search():
 
         hd = int(input("enter code:"))
@@ -52,9 +62,8 @@ products = [
 
 for category in categories:
     print(f"Category: {category.name}, Code: {category.code}, Number of Products: {category.no_of_products}")
-product.sortprice()
-
-
+product.low_sortprice()
+product.High_sortprice()
 product.search()
 
 
