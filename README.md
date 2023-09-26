@@ -1,2 +1,2 @@
-# hd_Python
-OOP exercise in python
+# Python_internship_tasks
+OOP exercises in python
